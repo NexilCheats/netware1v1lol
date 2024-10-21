@@ -60,21 +60,21 @@
             margin-top: 30px;
         }
 
-        .button-group a {
+        .button-group button {
             background-color: black;
             color: white;
             padding: 15px 30px;
             margin: 10px;
             font-size: 1.1em;
             border-radius: 50px;
-            text-decoration: none;
+            border: none;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .button-group a:hover {
+        .button-group button:hover {
             background-color: #333;
         }
-
     </style>
 </head>
 <body>
@@ -86,9 +86,16 @@
         <h1>Netware 1v1.lol <span class="highlight">#best cheat</span></h1>
         <p>Netware provides powerful cheats for 1v1.lol, giving you the ultimate advantage to dominate your opponents and secure victory in every match.</p>
         <div class="button-group">
-            <a href="https://link-center.net/1245794/netware" target="_blank">Download Netware</a>
+            <button id="downloadButton">Download Netware</button>
             <a href="https://discord.gg/BG96JgfxFK" target="_blank">Join Discord</a>
         </div>
     </div>
+
+    <script>
+        document.getElementById('downloadButton').addEventListener('click', function() {
+            // Redirect to Linkvertise
+            window.open('https://link-center.net/1245794/netware', '_blank');
+        });
+    </script>
 </body>
 </html>

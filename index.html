@@ -14,14 +14,12 @@
             background-color: #1c1c1c;
             color: white;
         }
-
         .header {
             background: radial-gradient(circle, rgba(45,45,45,1) 0%, rgba(0,0,0,1) 100%);
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #444;
         }
-
         .header p {
             margin: 0;
             padding: 10px;
@@ -31,7 +29,6 @@
             border-radius: 20px;
             display: inline-block;
         }
-
         .content {
             text-align: center;
             padding: 50px 20px;
@@ -39,40 +36,33 @@
             background-size: cover;
             background-position: center;
         }
-
         .content h1 {
             font-size: 3em;
             color: white;
         }
-
         .content p {
             font-size: 1.2em;
             color: #bbb;
             max-width: 800px;
             margin: 20px auto;
         }
-
         .content .highlight {
             color: #ff3d3d;
         }
-
         .button-group {
             margin-top: 30px;
         }
-
-        .button-group button {
+        .button-group a {
             background-color: black;
             color: white;
             padding: 15px 30px;
             margin: 10px;
             font-size: 1.1em;
             border-radius: 50px;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
             transition: background-color 0.3s ease;
         }
-
-        .button-group button:hover {
+        .button-group a:hover {
             background-color: #333;
         }
     </style>
@@ -81,21 +71,13 @@
     <div class="header">
         <p>This is the only official site, anything else other than netware1v1lol.netlify.app is a scam</p>
     </div>
-
     <div class="content">
         <h1>Netware 1v1.lol <span class="highlight">#best cheat</span></h1>
         <p>Netware provides powerful cheats for 1v1.lol, giving you the ultimate advantage to dominate your opponents and secure victory in every match.</p>
         <div class="button-group">
-            <button id="downloadButton">Download Netware</button>
+            <a href="/generate-token">Download Netware</a>
             <a href="https://discord.gg/BG96JgfxFK" target="_blank">Join Discord</a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('downloadButton').addEventListener('click', function() {
-            // Redirect to Linkvertise
-            window.open('https://link-center.net/1245794/netware', '_blank');
-        });
-    </script>
 </body>
 </html>

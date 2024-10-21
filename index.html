@@ -74,8 +74,8 @@
         .button-group a:hover {
             background-color: #333;
         }
-
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="header">
@@ -85,10 +85,41 @@
     <div class="content">
         <h1>Netware 1v1.lol <span class="highlight">#best cheat</span></h1>
         <p>Netware provides powerful cheats for 1v1.lol, giving you the ultimate advantage to dominate your opponents and secure victory in every match.</p>
+        
+        <form action="/submit-form" method="POST" id="my-form">
+            <div class="g-recaptcha" data-sitekey="6LfsV2cqAAAAAD2WXjNx5GMRFR4iEWy0ur7nj2Fi"></div>
+            <button type="submit">Submit</button>
+        </form>
+
         <div class="button-group">
             <a href="https://cdn.discordapp.com/attachments/1295277551698055209/1297691755793223715/NetWare.zip?ex=6716d920&is=671587a0&hm=dd782f6c2c7c699b9a3983c86c47e377a23fa899f21703f0f5593cebd5f736f1&" target="_blank">Download Netware</a>
             <a href="https://discord.gg/BG96JgfxFK" target="_blank">Join Discord</a>
         </div>
     </div>
+
+    <script>
+        document.getElementById("my-form").addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            const captchaResponse = grecaptcha.getResponse(); // Get reCAPTCHA response
+
+            const response = await fetch("/.netlify/functions/verify-captcha", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ captcha: captchaResponse }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                // Proceed with form submission or whatever you want to do
+                console.log("CAPTCHA verified successfully!");
+            } else {
+                console.error("CAPTCHA verification failed.");
+                alert("Please complete the CAPTCHA.");
+            }
+        });
+    </script>
 </body>
 </html>

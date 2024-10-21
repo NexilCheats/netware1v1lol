@@ -7,7 +7,73 @@
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
     <title>NetWare #1 best 1v1.lol cheat</title>
     <style>
-        /* Your existing CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+        }
+
+        .header {
+            background: radial-gradient(circle, rgba(45,45,45,1) 0%, rgba(0,0,0,1) 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .header p {
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+            color: #ccc;
+            background-color: rgba(255, 0, 0, 0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #330000, #990000);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            color: white;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #bbb;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .content .highlight {
+            color: #ff3d3d;
+        }
+
+        .button-group {
+            margin-top: 30px;
+        }
+
+        .button-group a {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group a:hover {
+            background-color: #333;
+        }
     </style>
 </head>
 <body>
@@ -26,11 +92,11 @@
 
     <script>
         function getDownloadLink() {
-            fetch('http://localhost:3000/get-download-link') // Change to your server URL
+            fetch('/.netlify/functions/get-download-link') // Fetch from the serverless function
                 .then(response => response.json())
                 .then(data => {
                     const linkElement = document.getElementById('download-link');
-                    linkElement.href = data.link;
+                    linkElement.href = data.link; // Update the href with the new link
                     linkElement.setAttribute('target', '_blank'); // Set target to open in new tab
                 })
                 .catch(error => console.error('Error fetching download link:', error));
